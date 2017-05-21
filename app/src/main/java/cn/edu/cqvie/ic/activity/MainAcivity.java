@@ -1,22 +1,26 @@
-package cn.edu.cqvie.ic.activity;
+package comb.example.yuyu.myandroid.activity;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import comb.example.yuyu.myandroid.R;
-import cn.edu.cqvie.ic.utils.MyFragemntAdpter;
+import comb.example.yuyu.myandroid.utils.GlideImageLoader;
+import comb.example.yuyu.myandroid.utils.MyFragemntAdpter;
 
 /**
  * 描述：首页框架
@@ -58,23 +62,19 @@ public class MainAcivity extends AppCompatActivity implements View.OnClickListen
         initView();
         
         initEvent();
-     }
-
-    private void initEvent() {
-        ivShouye.setOnClickListener(this);
-        ivShangjia.setOnClickListener(this);
-        ivLinli.setOnClickListener(this);
-        ivMe.setOnClickListener(this);
-
+        
+        viewPager = (ViewPager)findViewById(R.id.viewpager);
         fragmentList.add(new SyFragment());
         fragmentList.add(new ShangJiaFragment());
         fragmentList.add(new LinliFragment());
         fragmentList.add(new HomeFragment());
         fm = getSupportFragmentManager();
         MyFragemntAdpter myFragemntAdpter = new MyFragemntAdpter(fm,fragmentList);
+
         viewPager.setAdapter(myFragemntAdpter);
         viewPager.setCurrentItem(0);
         selectBtn(0);
+
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -83,8 +83,7 @@ public class MainAcivity extends AppCompatActivity implements View.OnClickListen
 
             @Override
             public void onPageSelected(int position) {
-                initBtn();
-                selectBtn(position);
+
             }
 
             @Override
@@ -92,6 +91,14 @@ public class MainAcivity extends AppCompatActivity implements View.OnClickListen
 
             }
         });
+     }
+
+    private void initEvent() {
+        ivShouye.setOnClickListener(this);
+        ivShangjia.setOnClickListener(this);
+        ivLinli.setOnClickListener(this);
+        ivMe.setOnClickListener(this);
+
     }
 
 
@@ -110,8 +117,6 @@ public class MainAcivity extends AppCompatActivity implements View.OnClickListen
         tvShangjia = (TextView) findViewById(R.id.tv_shangjia);
         tvLinli = (TextView) findViewById(R.id.tv_lingli);
         tvMe = (TextView) findViewById(R.id.tv_me);
-
-        viewPager = (ViewPager)findViewById(R.id.viewpager);
     }
 
     @Override
