@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.model;
+package cn.edu.cqvie.ic.entity;
 
 /**
  * Created by Sai on 16/3/28.

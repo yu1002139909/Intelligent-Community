@@ -1,11 +1,11 @@
-package comb.example.yuyu.myandroid.utils;
+package cn.edu.cqvie.ic.utils;
 
 import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-import comb.example.yuyu.myandroid.model.City;
+import cn.edu.cqvie.ic.entity.City;
 
 
 /**

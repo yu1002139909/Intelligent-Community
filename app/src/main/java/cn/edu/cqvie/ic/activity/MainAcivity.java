@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.activity;
+package cn.edu.cqvie.ic.activity;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -18,9 +18,9 @@ import com.youth.banner.BannerConfig;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.edu.cqvie.ic.utils.MyFragemntAdpter;
 import comb.example.yuyu.myandroid.R;
-import comb.example.yuyu.myandroid.utils.GlideImageLoader;
-import comb.example.yuyu.myandroid.utils.MyFragemntAdpter;
+
 
 /**
  * 描述：首页框架

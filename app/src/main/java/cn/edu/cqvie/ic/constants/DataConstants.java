@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.constants;
+package cn.edu.cqvie.ic.constants;
 
 /**
  * Created by Sai on 16/3/25.

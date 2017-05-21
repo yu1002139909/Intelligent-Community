@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.activity;
+package cn.edu.cqvie.ic.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,10 +25,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 import comb.example.yuyu.myandroid.R;
-import comb.example.yuyu.myandroid.constants.DataConstants;
-import comb.example.yuyu.myandroid.model.City;
-import comb.example.yuyu.myandroid.utils.CityListAdapter;
-import comb.example.yuyu.myandroid.utils.DividerDecoration;
+import cn.edu.cqvie.ic.constants.DataConstants;
+import cn.edu.cqvie.ic.entity.City;
+import cn.edu.cqvie.ic.utils.CityListAdapter;
+import cn.edu.cqvie.ic.utils.DividerDecoration;
 
 public class AreaListActivity extends AppCompatActivity implements OnQuickSideBarTouchListener {
     RecyclerView recyclerView;
