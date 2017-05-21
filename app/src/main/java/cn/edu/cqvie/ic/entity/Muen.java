@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.entity;
+package cn.edu.cqvie.ic.entity;
 
 import java.util.List;
 

@@ -11,40 +11,46 @@
         android:orientation="vertical"
         >
         <LinearLayout
+            android:id="@+id/top"
             android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:orientation="horizontal">
             <ImageView
+                android:id="@+id/seting"
                 android:layout_marginLeft="15dp"
                 android:layout_width="19dp"
                 android:layout_height="21dp"
                 android:src="@drawable/settings"
                 />
-            <ImageView
-                android:layout_marginLeft="472dp"
-                android:layout_width="19dp"
-                android:layout_height="21dp"
-                android:src="@drawable/email"
-                />
+                <ImageView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="0dp"
+                    android:layout_height="21dp"
+                    android:src="@drawable/email"
+                    />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="128dp"
             android:orientation="vertical"
             >
+
             <ImageView
+                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/touxiang"
-                />
+                android:src="@drawable/touxiang" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
+                android:textColor="#FFFFFF"
                 android:gravity="center"
                 android:text="yujibiao"
                 />
             <TextView
+                android:textColor="#FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
                 android:gravity="center"
@@ -77,9 +83,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="我的订单"
+
                 android:id="@+id/t_order"
                 android:gravity="center"
-                android:textColor="#585858"/>
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -89,7 +96,7 @@
             android:orientation="vertical">
             <ImageView
                 android:layout_width="35dp"
-                android:layout_height="35dp"
+                 android:layout_height="35dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="7dp"
                 android:layout_gravity="center_horizontal"
@@ -102,7 +109,7 @@
                 android:text="购物"
                 android:id="@+id/t_shopcar"
                 android:gravity="center"
-                android:textColor="#585858"/>
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -126,7 +133,7 @@
                 android:text="我的订单"
                 android:id="@+id/t_id"
                 android:gravity="center"
-                android:textColor="#585858"/>
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -149,7 +156,7 @@
                 android:text="我的钱包"
                 android:id="@+id/t_foleder"
                 android:gravity="center"
-                android:textColor="#585858"/>
+                android:textColor="#FFFFFF"/>
         </LinearLayout>
     </LinearLayout>
     <RelativeLayout

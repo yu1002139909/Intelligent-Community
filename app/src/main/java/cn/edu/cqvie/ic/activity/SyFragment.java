@@ -1,11 +1,7 @@
-package comb.example.yuyu.myandroid.activity;
+package cn.edu.cqvie.ic.activity;
 
-import android.content.Context;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import comb.example.yuyu.myandroid.R;
-import comb.example.yuyu.myandroid.utils.GlideImageLoader;
+import cn.edu.cqvie.ic.utils.GlideImageLoader;
 
 public class SyFragment extends Fragment {
     private List<String> list  = new ArrayList<String>();
-    private List<Integer> list2  = new ArrayList<Integer>();
+//    private List<Integer> list2  = new ArrayList<Integer>();
     private Banner banner;
 
     @Override
@@ -39,9 +35,9 @@ public class SyFragment extends Fragment {
     private void initData() {
         list.add("http://203.195.163.251:8080/20170507/0feb9e6ff21e448fbe2aeed2f1a5b732.png");
         list.add("http://203.195.163.251:8080/20170507/cfe03efbc0d140faa89e80754a0d4d46.png");
-        list.add("http://192.168.43.109:8080/studentmanage/image/zhiui.jpg");
-        list2.add(R.drawable.banner);
-        list2.add(R.drawable.zhiui);
+//        list.add("http://192.168.43.109:8080/studentmanage/image/zhiui.jpg");
+//        list2.add(R.drawable.banner);
+//        list2.add(R.drawable.zhiui);
         banner.setImageLoader(new GlideImageLoader());
         banner.setIndicatorGravity(BannerConfig.RIGHT);
         banner.setImages(list);

@@ -1,11 +1,11 @@
-package comb.example.yuyu.myandroid.utils;
+package cn.edu.cqvie.ic.utils;
 
 import android.support.v4.app.FragmentPagerAdapter;
 import java.util.List;
 
 import android.support.v4.app.Fragment;   //注意打包是用support.v4的
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+
 /**
  * Created by yuyu on 2017/5/14.
  */

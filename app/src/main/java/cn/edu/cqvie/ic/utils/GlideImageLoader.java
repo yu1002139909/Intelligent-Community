@@ -1,4 +1,4 @@
-package comb.example.yuyu.myandroid.utils;
+package cn.edu.cqvie.ic.utils;
 
 import android.content.Context;
 import android.widget.ImageView;

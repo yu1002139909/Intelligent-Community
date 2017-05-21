@@ -12,19 +12,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainAcivity">
+        <activity android:name="cn.edu.cqvie.ic.activity.MainAcivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.HomeFragment"
+            android:name="cn.edu.cqvie.ic.activity.HomeFragment"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.SyFragment" />
-        <activity android:name=".activity.LinliFragment" />
-        <activity android:name=".activity.ShangJiaFragment"></activity>
+        <activity android:name="cn.edu.cqvie.ic.activity.SyFragment" />
+        <activity android:name="cn.edu.cqvie.ic.activity.LinliFragment" />
+        <activity android:name="cn.edu.cqvie.ic.activity.ShangJiaFragment"></activity>
     </application>
 
 </manifest>
