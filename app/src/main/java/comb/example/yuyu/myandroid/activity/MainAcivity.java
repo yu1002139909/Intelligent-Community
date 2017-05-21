@@ -58,11 +58,8 @@ public class MainAcivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-
         initView();
-        
         initEvent();
-        
         viewPager = (ViewPager)findViewById(R.id.viewpager);
         fragmentList.add(new SyFragment());
         fragmentList.add(new ShangJiaFragment());

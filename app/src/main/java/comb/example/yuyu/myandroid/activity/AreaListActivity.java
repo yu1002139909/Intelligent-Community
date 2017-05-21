@@ -1,10 +1,8 @@
 package comb.example.yuyu.myandroid.activity;
 
 import android.graphics.Color;
-import android.support.v4.app.Fragment;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -32,28 +30,25 @@ import comb.example.yuyu.myandroid.model.City;
 import comb.example.yuyu.myandroid.utils.CityListAdapter;
 import comb.example.yuyu.myandroid.utils.DividerDecoration;
 
-public class LinliFragment extends Fragment implements OnQuickSideBarTouchListener {
+public class AreaListActivity extends AppCompatActivity implements OnQuickSideBarTouchListener {
     RecyclerView recyclerView;
     HashMap<String,Integer> letters = new HashMap<>();
     QuickSideBarView quickSideBarView;
     QuickSideBarTipsView quickSideBarTipsView;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        setContentView(R.layout.activity_arealist);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        quickSideBarView = (QuickSideBarView) findViewById(R.id.quickSideBarView);
+        quickSideBarTipsView = (QuickSideBarTipsView) findViewById(R.id.quickSideBarTipsView);
 
-    @Nullable
-    @Override
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_arealist, container, false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        quickSideBarView = (QuickSideBarView)view.findViewById(R.id.quickSideBarView);
-        quickSideBarTipsView = (QuickSideBarTipsView)view.findViewById(R.id.quickSideBarTipsView);
         //设置监听
         quickSideBarView.setOnQuickSideBarTouchListener(this);
+
+
         //设置列表数据和浮动header
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         // Add the sticky headers decoration
@@ -63,10 +58,11 @@ public class LinliFragment extends Fragment implements OnQuickSideBarTouchListen
         Type listType = new TypeToken<LinkedList<City>>(){}.getType();
         Gson gson = new Gson();
         LinkedList<City> cities = gson.fromJson(DataConstants.cityDataList, listType);
+
         ArrayList<String> customLetters = new ArrayList<>();
+
         int position = 0;
         for(City city: cities){
-            System.out.println(city.getCityName());
             String letter = city.getFirstLetter();
             //如果没有这个key则加入并把位置也加入
             if(!letters.containsKey(letter)){
@@ -83,10 +79,13 @@ public class LinliFragment extends Fragment implements OnQuickSideBarTouchListen
 
         final StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(adapter);
         recyclerView.addItemDecoration(headersDecor);
+
         // Add decoration for dividers between list items
-        recyclerView.addItemDecoration(new DividerDecoration(this.getContext()));
-        return view;
+        recyclerView.addItemDecoration(new DividerDecoration(this));
     }
+
+
+    @Override
     public void onLetterChanged(String letter, int position, float y) {
         quickSideBarTipsView.setText(letter, position, y);
         //有此key则获取位置并滚动到该位置
@@ -100,6 +99,7 @@ public class LinliFragment extends Fragment implements OnQuickSideBarTouchListen
         //可以自己加入动画效果渐显渐隐
         quickSideBarTipsView.setVisibility(touching? View.VISIBLE: View.INVISIBLE);
     }
+
     private class CityListWithHeadersAdapter extends CityListAdapter<RecyclerView.ViewHolder>
             implements StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder> {
         @Override
